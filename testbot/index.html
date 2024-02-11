@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot with Gradio and Rasa</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/@gradio/core/dist/umd/gradio.min.js"></script>
+</head>
+<body>
+    <button id="chatbot-icon">Chat with Bot</button>
+
+    <script>
+        document.getElementById('chatbot-icon').addEventListener('click', openGradio);
+
+        function openGradio() {
+            const gradio = gr.Interface.load('my_rasa_app.py', id='chatbot-window');
+            gradio.launch();
+        }
+    </script>
+</body>
+</html>
+
